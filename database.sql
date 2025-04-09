@@ -1,0 +1,11 @@
+
+CREATE DATABASE IF NOT EXISTS landing_db;
+USE landing_db;
+
+CREATE TABLE contactos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100),
+  email VARCHAR(100),
+  mensaje TEXT,
+  fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
