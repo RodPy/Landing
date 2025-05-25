@@ -314,15 +314,14 @@
             </div>
             
             <div class="form-container">
-              <h2>Formulario de contacto</h2>
-              <form action="submit.php" method="post">
-                <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="text" name="apellido" placeholder="Apellido" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <input type="tel" name="telefono" placeholder="Número de teléfono*" required>
-               
-                <div class="custom-select-wrapper">
-                  <select name="area" class="styled-select" required>
+                <h2>Formulario de contacto</h2>
+                <form action="submit.php" method="post">
+                  <input type="text" name="nombre" placeholder="Nombre" required>
+                  <input type="text" name="apellido" placeholder="Apellido" required>
+                  <input type="email" name="email" placeholder="Correo electrónico" required>
+                  <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+            
+                  <select name="area" required>
                     <option value="">¿Área de la consulta?</option>
                     <option value="tecnico">Técnico</option>
                     <option value="ambiental">Ambiental</option>
@@ -330,26 +329,19 @@
                     <option value="legal">Legal</option>
                     <option value="otro">Otro</option>
                   </select>
-                  <svg class="select-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#888" viewBox="0 0 24 24">
-                    <path d="M7 10l5 5 5-5z"/>
-                  </svg>
-                  <br>
-
-                </div> <br>
-                
-
-                <input type="text" name="titulo" placeholder="Título de la consulta" required>
-                <textarea name="descripcion" rows="5" placeholder="Descripción de la consulta" required></textarea>
-                <button type="submit">Enviar</button>
-              </form>
-              <div style="margin-top: 1rem; text-align: center;">
-                <a href="https://wa.me/595981234567" target="_blank" style="color: #25D366; font-weight: bold; text-decoration: none;">
-                  Prefiero hacer mi consulta vía WhatsApp
-                </a>
-              </div>
-            </div>
             
-        </div>
+                  <input type="text" name="titulo" placeholder="Título de la consulta" required>
+                  <textarea name="descripcion" rows="5" placeholder="Descripción de la consulta" required></textarea>
+            
+                  <button type="submit">Enviar</button>
+                </form>
+            
+                <div style="text-align: center; margin-top: 1rem;">
+                  <a href="https://wa.me/595XXXXXXXX?text=Hola%2C%20quisiera%20hacer%20una%20consulta" target="_blank" class="whatsapp-button">
+                    Prefiero hacer mi consulta vía WhatsApp
+                  </a>
+                </div>
+              </div>
 
         
         <div class="footer">

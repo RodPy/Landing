@@ -31,3 +31,30 @@ button {
   cursor: pointer;
   border-radius: 5px;
 }
+.custom-select-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.styled-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #2e2e2e;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.select-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
