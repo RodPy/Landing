@@ -1,15 +1,27 @@
-
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require 'db_config.php';
 
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $mensaje = $_POST['mensaje'];
+    // Sanitizar entradas
+    $nombre     = htmlspecialchars(trim($_POST['nombre'] ?? ''));
+    $apellido   = htmlspecialchars(trim($_POST['apellido'] ?? ''));
+    $email      = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
+    $telefono   = htmlspecialchars(trim($_POST['telefono'] ?? ''));
+    $area       = htmlspecialchars(trim($_POST['area'] ?? ''));
+    $titulo     = htmlspecialchars(trim($_POST['titulo'] ?? ''));
+    $descripcion = htmlspecialchars(trim($_POST['descripcion'] ?? ''));
 
-    $stmt = $pdo->prepare("INSERT INTO contactos (nombre, email, mensaje) VALUES (?, ?, ?)");
-    $stmt->execute([$nombre, $email, $mensaje]);
+    // Validar campos obligatorios
+    if (!$nombre || !$apellido || !$email || !$telefono || !$area || !$titulo || !$descripcion) {
+        http_response_code(400);
+        echo "Todos los campos son obligatorios.";
+        exit;
+    }
 
-    echo "¡Mensaje enviado correctamente!";
+    // Insertar en la base de datos
+    $stmt = $pdo->prepare("INSERT INTO consultas (nombre, apellido, email, telefono, area, titulo, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$nombre, $apellido, $email, $telefono, $area, $titulo, $descripcion]);
+
+    echo "¡Consulta enviada correctamente!";
 }
 ?>

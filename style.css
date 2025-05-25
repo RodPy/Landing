@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f3f3f3;
@@ -15,12 +14,34 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input, textarea {
+/* Estilo unificado para todos los campos del formulario */
+.form-container input,
+.form-container textarea,
+.form-container select {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 10rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.3s ease;
+  height: 2.8rem; /* ajustado al alto visual de los input */
+  line-height: 1.2rem; /* mejora el centrado del texto */
+  appearance: none; /* remueve estilo nativo (solo si querés total uniformidad) */
+  background-color: white;
+  background-position: right 0.8rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+}
+
+/* Estilo al hacer foco */
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+  border: 1px solid #264d2c;
 }
 
 button {
@@ -30,31 +51,4 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-}
-.custom-select-wrapper {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.styled-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0.8rem;
-  font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
-  color: #2e2e2e;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.select-icon {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
 }
