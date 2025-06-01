@@ -404,6 +404,31 @@
         type="text/javascript"></script>
     <script src="https://cdn.prod.website-files.com/6389d04c42ab4a62c4c04598/js/webflow.f2616b98.b2c6ae48fa6693c9.js"
         type="text/javascript"></script>
+        
+        
+        
+    <!-- Popup de éxito -->
+    <div id="successPopup" style="display: none; position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%);
+      background-color: #264d2c; color: white; padding: 1.5rem 2rem; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3); z-index: 9999; font-size: 1.2rem;">
+      ¡Consulta enviada correctamente!
+    </div>
+    
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('success') === 'true') {
+          const popup = document.getElementById('successPopup');
+          popup.style.display = 'block';
+    
+          setTimeout(() => {
+            popup.style.display = 'none';
+            // Remueve el parámetro de la URL sin recargar
+            window.history.replaceState({}, document.title, window.location.pathname);
+          }, 3000); // Desaparece en 3 segundos
+        }
+      });
+    </script>
+
 </body>
 
 </html>

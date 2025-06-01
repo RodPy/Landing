@@ -22,6 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO consultas (nombre, apellido, email, telefono, area, titulo, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->execute([$nombre, $apellido, $email, $telefono, $area, $titulo, $descripcion]);
 
-    echo "¡Consulta enviada correctamente!";
+    // Redirigir con mensaje de éxito
+    header("Location: index.html?success=true");
+    exit;
 }
 ?>
